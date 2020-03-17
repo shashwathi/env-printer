@@ -27,6 +27,7 @@ func main() {
 func printRequest(w http.ResponseWriter, r *http.Request) {
 	var output []string
 	output = append(output, fmt.Sprintf("POD_NAME: %s", os.Getenv("POD_NAME")))
+	output = append(output, fmt.Sprintf("POD_IP: %s", os.Getenv("POD_IP")))
 	result := strings.Join(output, "\n") + "\n"
 	fmt.Fprintf(w, result)
 }
